@@ -45,7 +45,7 @@ module DCell
 
         cores = cpu_info.scan(/core id\s+: \d+/).uniq.size
         @cpu_count = cores > 0 ? cores : 1
-        @distribution = `lsb_release -d`[/Description:\s+(.*)\s*$/, 1]
+        @distribution = `lsb_release -d`[/Description:\s+(.*)\s*$/, 1] rescue @distribution = "unknown"
       else
         @cpu_type = @cpu_vendor = @cpu_speed = @cpu_count = nil
       end
