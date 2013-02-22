@@ -39,6 +39,10 @@ module DCell
           @redis.hset 'nodes', node_id, addr
         end
 
+        def del(node_id)
+          @redis.hdel 'nodes', node_id
+        end
+
         def nodes
           @redis.hkeys 'nodes'
         end
@@ -46,9 +50,11 @@ module DCell
         def clear
           @redis.del 'nodes'
         end
+
       end
 
       def get_node(node_id);       @node_registry.get(node_id) end
+      def del_node(node_id);       @node_registry.del(node_id) end
       def set_node(node_id, addr); @node_registry.set(node_id, addr) end
       def nodes;                   @node_registry.nodes end
 
