@@ -1,7 +1,8 @@
-before_install: sudo apt-get install libzmq-dev
+before_install: sudo apt-get install libzmq3-dev
 
 rvm:
   - 1.9.3
+  - 2.0.0
   - ruby-head
   - jruby-19mode
   - jruby-head
@@ -9,8 +10,10 @@ rvm:
 
 matrix:
   allow_failures:
-    # rbx seems to be losing exception messages o_O
-    - rvm: rbx-19mode
+    - rvm: ruby-head
+    - rvm: jruby-head
+    - rvm: jruby-19mode
+    - rvm: rbx-19mode # rbx seems to be losing exception messages o_O
 
 notifications:
   irc: "irc.freenode.org#celluloid"
