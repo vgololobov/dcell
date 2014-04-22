@@ -1,3 +1,15 @@
+0.15.0 (2013-09-04)
+-----------------------
+* Tracking release for Celluloid 0.15
+* Use the celluloid-redis gem with the Redis adapter
+
+0.14.0 (2013-05-07)
+-------------------
+* Allow InfoService to run on linux when lsb-release is missing
+* Remove broken moneta adapter
+* Use ephemeral mode for ZK adapter
+* Add support for executing blocks over DCell
+
 0.13.0
 ------
 * First semi-stable release in nearly forever! Yay!

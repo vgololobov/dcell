@@ -5,6 +5,7 @@ require "dcell/version"
 Gem::Specification.new do |gem|
   gem.name        = "dcell"
   gem.version     = DCell::VERSION
+  gem.license     = 'MIT'
   gem.authors     = ["Tony Arcieri"]
   gem.email       = ["tony.arcieri@gmail.com"]
   gem.homepage    = "http://github.com/celluloid/dcell"
@@ -16,10 +17,10 @@ Gem::Specification.new do |gem|
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.require_paths = ["lib"]
 
-  gem.add_runtime_dependency "celluloid",     ">= 0.13.0"
-  gem.add_runtime_dependency "celluloid-zmq", ">= 0.13.0"
+  gem.add_runtime_dependency "celluloid",     ">= 0.15.0"
+  gem.add_runtime_dependency "celluloid-zmq", ">= 0.15.0"
   gem.add_runtime_dependency "reel"
-  gem.add_runtime_dependency "redis"
+  gem.add_runtime_dependency "celluloid-redis"
   gem.add_runtime_dependency "redis-namespace"
 
   gem.add_development_dependency "rake"
